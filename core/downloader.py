@@ -35,12 +35,15 @@ def download(url: str, format: str, quality: str, output_dir: str,
             last_filename.append(d.get("filename", ""))
             progress_hook(100)
 
+    is_playlist = "youtube.com/playlist" in url
+
     ydl_opts = {
         "outtmpl": output_dir + "/%(title)s.%(ext)s",
         "format": ydl_format,
         "postprocessors": get_ydl_postprocessors(fmt),
         "progress_hooks": [_hook],
         "quiet": True,
+        "noplaylist": not is_playlist,
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
