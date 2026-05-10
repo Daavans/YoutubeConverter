@@ -1,0 +1,28 @@
+{
+  "expo": {
+    "name": "Yoink",
+    "slug": "yoink",
+    "scheme": "yoink",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0e1014",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.yoink.app"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0e1014"
+      },
+      "package": "com.yoink.app"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

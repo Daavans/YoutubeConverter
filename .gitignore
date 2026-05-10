@@ -1,0 +1,10 @@
+node_modules/
+dist/
+dist-electron/
+release/
+.DS_Store
+*.log
+.env
+desktop/node_modules/
+mobile/node_modules/
+shared/node_modules/

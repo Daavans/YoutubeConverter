@@ -1,0 +1,17 @@
+{
+  "name": "yoink",
+  "private": true,
+  "workspaces": [
+    "shared",
+    "desktop",
+    "mobile"
+  ],
+  "scripts": {
+    "desktop": "pnpm --filter desktop dev",
+    "mobile": "pnpm --filter mobile start"
+  },
+  "engines": {
+    "node": ">=18",
+    "pnpm": ">=8"
+  }
+}

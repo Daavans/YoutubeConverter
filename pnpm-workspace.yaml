@@ -1,0 +1,8 @@
+packages:
+  - 'shared'
+  - 'desktop'
+  - 'mobile'
+allowBuilds:
+  electron: true
+  esbuild: true
+  youtube-dl-exec: true
