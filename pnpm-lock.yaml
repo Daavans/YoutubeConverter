@@ -16,6 +16,9 @@ importers:
       '@yoink/shared':
         specifier: workspace:*
         version: link:../shared
+      dargs:
+        specifier: ^7.0.0
+        version: 7.0.0
       ffmpeg-static:
         specifier: ^5.3.0
         version: 5.3.0

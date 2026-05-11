@@ -1,9 +1,10 @@
-import youtubeDl from 'youtube-dl-exec';
+import { create } from 'youtube-dl-exec';
 import type { VideoMeta } from '../../../shared/src/types';
 import { formatViews } from '../../../shared/src/formatters';
+import { getYtDlpPath } from '../utils/ffPaths';
 
 export async function fetchMetadata(url: string): Promise<VideoMeta> {
-  const info = await youtubeDl(url, {
+  const info = await create(getYtDlpPath())(url, {
     dumpSingleJson: true,
     noCheckCertificates: true,
     noWarnings: true,

@@ -1,10 +1,10 @@
-import youtubeDl from 'youtube-dl-exec';
+import { create } from 'youtube-dl-exec';
 import path from 'path';
 import os from 'os';
 import type { DownloadOpts } from '../../../shared/src/types';
 import { AUDIO_FORMAT_IDS, QUALITY_FORMAT_MAP } from '../../../shared/src/constants';
 import { isPlaylistUrl } from '../../../shared/src/validators';
-import { getFfmpegDir } from '../utils/ffPaths';
+import { getFfmpegDir, getYtDlpPath } from '../utils/ffPaths';
 
 type Emitter = (event: string, data: unknown) => void;
 
@@ -58,7 +58,7 @@ export async function startDownload(opts: DownloadOpts, emit: Emitter): Promise<
     execOpts.downloadSections = downloadSections;
   }
 
-  const subprocess = youtubeDl.exec(url, execOpts);
+  const subprocess = create(getYtDlpPath()).exec(url, execOpts);
   activeProcess = subprocess;
 
   return new Promise((resolve, reject) => {

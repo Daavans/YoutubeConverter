@@ -13,7 +13,12 @@ export default defineConfig({
         vite: {
           build: {
             outDir: 'dist-electron',
-            rollupOptions: { external: ['electron', 'youtube-dl-exec'] },
+            rollupOptions: {
+              external: [
+                'electron',
+                'ffmpeg-static',
+              ],
+            },
           },
         },
       },
